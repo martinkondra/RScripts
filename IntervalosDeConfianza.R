@@ -34,8 +34,12 @@ t = qt(1-alpha/2, df=n-1)  #student
 int1 = xbar - t * desvio.media
 int2 = xbar + t * desvio.media
 
+
 # estimador de la variancia
-int1 = ((n-1)*S2**2) / qchisq(1-intervalo/2, df=n-1)
-int2 = ((n-1)*S2**2) / qchisq(intervalo/2, df=n-1)
+n = 400
+S2 = 144
+intervalo = .05
+int1 = ((n-1)*S2) / qchisq(1-intervalo/2, df=n-1)
+int2 = ((n-1)*S2) / qchisq(intervalo/2, df=n-1)
 
 

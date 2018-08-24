@@ -3,15 +3,15 @@
 
 ## DATOS ##
 
-xbar <- p             # sample mean | (media/n)*N para total | p*N para casos favorables | p para proporcion
-sigma <- 3               # population standard deviation 
-n <- 100.0                  # sample size 
+xbar <- 30/2500             # sample mean | (media/n)*N para total | p*N para casos favorables | p de la muestra para proporcion
+sigma <- 3           # population standard deviation 
+n <- 2500                  # sample size 
 N = FALSE
-p = 14/100
+p = .15              # del h0, no de la muestra extraida
 q = 1-p
 
-h0 <- .05           # hypothesized value 
-alpha <- .10
+h0 <- .15           # hypothesized value 
+alpha <- .05
 
 if(N){
   cvpf <- sqrt((N-n)/(N-1))
@@ -55,8 +55,8 @@ if(xc>xbar){
 # bidireccional
 z.half.alpha = qnorm(1-alpha/2) 
 z.alpha = c(-z.half.alpha, z.half.alpha) 
-xc1 = h0 + z.alpha[1] * desvio.proporcion
-xc2 = h0 + z.alpha[2] * desvio.proporcion
+xc1 = h0 + z.alpha[1] * desvio.media
+xc2 = h0 + z.alpha[2] * desvio.media
 
 if((xc1>xbar) | (xbar>xc2)){
   print("Se rechaza h0")
