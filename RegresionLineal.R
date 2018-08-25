@@ -25,7 +25,7 @@ xi = (yi-a)/b
 # pearson correlation
 pearson = cov(x,y)/(sd(x)*sd(y))
 pearson = sqrt(b*b1) #multiplicamos el b para cada recta
-cor(x,y)
+pearson = cor(x,y)
 
 # coeficiente de determinacion: porcentaje de los cambios en una variable explicados por cambios en la otra
 cd = (pearson**2) * 100
